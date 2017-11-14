@@ -1,0 +1,12 @@
+application: gae-go-186008
+version: verify-gae-go-upload
+runtime: go
+api_version: go1.8
+
+handlers:
+- url: /(.*\.(js))$
+  static_files: templates/\1
+  upload: templates/.*\.(js)$
+
+- url: /.*
+  script: _go_app
