@@ -16,7 +16,12 @@ var (
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := appengine.NewContext(r)
 
-	uploadURL, err := blobstore.UploadURL(ctx, "/upload", nil)
+	option := blobstore.UploadURLOptions{
+		MaxUploadBytes: 1024 * 1024 * 1024,
+		StorageBucket:  "howdy39/subDir",
+	}
+
+	uploadURL, err := blobstore.UploadURL(ctx, "/upload", &option)
 	if err != nil {
 		serveError(ctx, err)
 		return

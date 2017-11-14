@@ -1,6 +1,7 @@
 # verify-gae-go-upload
+https://cloud.google.com/appengine/docs/standard/go/blobstore/
 
-see https://qiita.com/tomorier/items/7ee5222137651efddb33
+https://qiita.com/tomorier/items/7ee5222137651efddb33
 
 ## 準備
 ```
